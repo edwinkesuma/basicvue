@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Quicksand&display=swap">
+    <style>
+        body{
+            margin: 5%;
+            font-family: 'Quicksand', sans-serif;
+        }
+
+    </style>
+</head>
+<body>
+    <h3>Header</h3>
+    <div id="app">
+        <div v-if="showDatas">
+            <h4>Name: {{name}}</h4>
+            <h4>Age: {{age}}</h4>
+            <h4>Gender: {{gender}}</h4>
+            <h4>Hoby: {{hoby}}</h4>
+            
+            <button @click="increaseAge">Increase Age</button>
+            <button @click="decreaseAge">Decrease Age</button>
+            <button @click="changeHoby('Sleep')">Change Hoby</button>
+        </div>
+        <br>
+        <button @click="showAllDatas">
+            <span v-if="showDatas">Hide all data</span>
+            <span v-else>Show all data</span>
+        </button>
+        <div v-show="showDatas">Curently showing all data</div>
+    </div>
+    <h3>Footer</h3>
+
+    <script src="https://unpkg.com/vue@3.0.2"></script>
+    <script src="app.js"></script>
+</body>
+</html>
