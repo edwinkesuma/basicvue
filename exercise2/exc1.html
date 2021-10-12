@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Quicksand&display=swap">
+    <style>
+        body{
+            margin: 5%;
+            font-family: 'Quicksand', sans-serif;
+        }
+
+        .box{
+            padding: 100px 0;
+            width: 400px;
+            text-align: center;
+            background: #ddd;
+            margin: 20px;
+            display: inline-block;
+        }
+    </style>
+
+</head>
+<body>
+    <h1>This is Header</h1>
+    <div id="app">
+        <div @mouseover="eventHandler($event, 5)" class="box">Mouse over</div>
+        <div @mouseleave="eventHandler" class="box">Mouse leave</div>
+        <div @dblclick="eventHandler" class="box">Double click</div>
+        <div @mousemove="handleEvent" class="box">Mouse move - {{x}} {{y}}</div>
+    </div>
+    <h1>This is Footer</h1>
+
+    
+    <script src="https://unpkg.com/vue@3.0.2"></script>
+    <script src="app.js"></script>
+</body>
+</html>
