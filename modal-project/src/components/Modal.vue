@@ -1,10 +1,22 @@
 <template>
-    <div class="backdrop">
-        <div class="modal">
-            <p>This is modal</p>
+    <div class="backdrop" @click.self="closeModal">
+        <div class="modal" :class="{dark: theme === 'dark'}">
+            <slot></slot>
+            <slot name="link"></slot>
         </div>
     </div>
 </template>
+
+<script>
+    export default {
+        props: ['greeting2', 'theme',],
+        methods:{
+            closeModal(){
+                this.$emit('close')
+            }
+        }
+    }
+</script>
 
 <style>
     .modal{
@@ -20,5 +32,9 @@
         background: rgba(0, 0, 0, 0.5);
         width: 100%;
         height: 100%;
+    }
+    .modal.dark{
+        background: darkgrey;
+        color: white;
     }
 </style>
